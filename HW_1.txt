@@ -1,0 +1,40 @@
+using System;
+using System.Diagnostics;
+namespace HW
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start(); // Start the timer 
+            Console.WriteLine("How many times do you want to write this statement?");
+            int n, y = 0;
+            int z = 5;
+            int x = 2;
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                z = y + x;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                y = x + z;
+                for (int j = 0; j < n; j++)
+                {
+                    x = y + z;
+                }
+            }
+            // code to time 
+            // Use loop(s) with something slow inside like double.TryParse("3.14159",out doubleVariable). 
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+            timer.Stop(); // Stop the timer 
+            decimal micro = (decimal)timer.Elapsed.Ticks / 10M;
+            Console.Write("{0,5:F1},", micro);
+        }
+    }
+}

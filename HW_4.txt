@@ -1,0 +1,23 @@
+public OurStack<T> MakeNewStack(T value)
+    {
+        OurStack<T> oldStack = new OurStack<T>(); //create oldstack
+        OurArrayStack<T> newStack = new OurArrayStack<T>(); //create newstack
+        Console.WriteLine("Please input the amount of items to move to the new stack."); //ask user for the control value
+        int n = Convert.ToInt32(Console.ReadLine()); //establish control value
+        if (n > 0) //make sure n is not negative
+        {
+
+            for (int i = 0; i < n; i++)
+            {
+                newStack.Push(oldStack.Pop()); //move oldStack values to newStack in order via OurArrayStack
+            }
+        }
+
+        else //if n is negative
+        {
+            throw new Exception("Input cannot be 0.");
+        }
+
+        return newStack; //return newStack
+
+    }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<h1 id = "welcomeHeader">Welcome to this HTML page!</h1>
+<h2 id = "changeHeader"></h2>
+
+</head>
+
+<body>
+<p>
+Choose one of the below buttons to perform an operation!
+</p>
+
+<button onclick = calculate()>Calculate something!</button>
+<script>
+function calculate()
+{
+	let num1 = parseInt(window.prompt("Enter your first number."));
+	let num2 = parseInt(window.prompt("Enter your second number."));
+	let userInput = window.prompt("Please enter what operation you would like to do:", "ex. Add, Subtract, Multiply, Divide.");
+	switch (userInput)
+	{
+		case "Add":
+		{
+			let total = num1 + num2;
+			document.getElementById("changeHeader").innerHTML = total;
+			break;
+		}
+		case "Subtract":
+		{
+			let total = num1 - num2;
+			document.getElementById("changeHeader").innerHTML = total;
+			break;
+		}
+		case "Multiply":
+		{
+			let total = num1 * num2;
+			document.getElementById("changeHeader").innerHTML = total;
+			break;
+		}
+		case "Divide":
+		{
+			let total = num1 / num2;
+			document.getElementById("changeHeader").innerHTML = total;
+			break;
+		}
+	}
+}	
+</script>
+
+<button onclick = countNum()>Count to a number!</button>
+<script>
+function countNum()
+{
+	let countNum = parseInt(window.prompt("What number would you like me to count to?"));
+	for (let i = 1; i <= countNum; i++)
+	{
+		document.getElementById("changeHeader").innerHTML += i + "<br>";
+	}
+}
+</script>
+
+<button onclick = chooseRandomDecimal()>Choose a random decimal!</button>
+<script>
+function chooseRandomDecimal()
+{
+	document.getElementById("changeHeader").innerHTML = Math.random();
+}
+</script>
+
+<button onclick = getDayOfWeek()>Find out what day it is!</button>
+<script>
+function getDayOfWeek()
+{
+	const d = new Date();
+	let dayNumber = d.getDay();
+	switch (dayNumber)
+	{
+		case 1:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Monday.";
+			break;
+		}
+		case 2:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Tuesday.";
+			break;
+		}
+		case 3:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Wednesday.";
+			break;
+		}
+		case 4:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Thursday.";
+			break;
+		}
+		case 5:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Friday.";
+			break;
+		}
+		case 6:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Saturday.";
+			break;
+		}
+		case 7:
+		{
+			document.getElementById("changeHeader").innerHTML = "Today is Sunday.";
+			break;
+		}
+	}
+}
+</script>
+
+</body>
+
+
+</html>

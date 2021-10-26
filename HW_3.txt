@@ -1,0 +1,18 @@
+public void MakeNewList()
+        {
+            Console.WriteLine("Please input integer value for new list increment: "); //ask for nth value
+            int n = Console.ReadLine(); //obtain nth value
+            OurList<T> NewList = new OurList<T>(); //make new list
+            Node pTmp = first; //establish a way to hop from entry to entry
+            while (pTmp != null)
+            {
+                if ((pTmp.Data % n) == 0) //if remainder is 0, then it fits the nth value
+                {
+                    NewList.AddLast(pTmp.Data); //add data to new list
+                }
+                pTmp = pTmp.Next; //hop to next data entry
+            }
+
+            
+            
+        }
